@@ -1,0 +1,38 @@
+#include <Servo.h>
+Servo myservo;
+int trigPin = 9;
+int echoPin = 8;
+long distance;
+long duration;
+unsigned long lastDetectedTime = 0;
+
+void setup()
+{
+myservo.attach(7);
+pinMode(trigPin, OUTPUT);
+pinMode(echoPin, INPUT);
+}
+}
+void loop()
+{
+     ultra_sonic();
+    if (distance <= 9)
+  {
+  myservo.write(0);
+  lastDetectedTime = millis();
+} else if (millis() - lastDetectedTime >= 3000)
+{
+myservo.write(93);
+}
+delay(1000);
+}
+void ultra_sonic()
+{
+digitalWrite(trigPin, LOW);
+delayMicroseconds(2);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(10);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distance = duration * 0.034 / 2;
+}
