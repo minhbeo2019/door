@@ -1,13 +1,4 @@
 # door
 my automatic door!
 
-Wiring steps:
-● Servo motor:
-○ GND → GND
-○ VCC → 5V
-○ Signal → Pin 7
-● HC-SR04:
-○ VCC → 5V
-○ GND → GND
-○ Trig → Pin 9
-○ Echo → Pin 8
+Made to test my Arduino skills, more to come.
